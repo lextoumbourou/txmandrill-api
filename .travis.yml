@@ -9,6 +9,7 @@ install:
 
 script:
   - coverage run --source="." $(which trial) tests && coverage report
+  - flake8 .
 
 after_success:
   - coveralls
