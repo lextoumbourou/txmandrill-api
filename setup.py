@@ -4,7 +4,7 @@ from setuptools import setup
 
 
 setup(
-    name='txmandrill-api',
+    name='txmandrill',
     version='1.0.0',
     description='The Mandrill Python client but for Twisted..',
     author='Lex Toumbourou',
