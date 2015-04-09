@@ -30,6 +30,10 @@ from txmandrill import TXMandrill
 def example():
     m = TXMandrill('YOUR_API_KEY')
 
+    # Ping
+    result = yield m.users.ping()
+    pprint(result)
+
     # Return the information about the API-connected user
     result = yield m.users.info()
     pprint(result)
