@@ -1,6 +1,7 @@
 # txmandrill-api
 
 [![Build Status](https://travis-ci.org/lextoumbourou/txmandrill-api.svg?branch=master)](https://travis-ci.org/lextoumbourou/txmandrill-api)
+[![Coverage Status](https://coveralls.io/repos/lextoumbourou/txmandrill-api/badge.svg)](https://coveralls.io/r/lextoumbourou/txmandrill-api)
 
 The Mandrill Python client but for Twisted.
 
