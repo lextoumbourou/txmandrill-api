@@ -30,7 +30,8 @@ class TXMandrill(Mandrill):
     @inlineCallbacks
     def call(self, url, params=None):
         """Override Mandrill's call method to return a deferred."""
-        params = (params or {}).update({'key': self.apikey})
+        params = params or {}
+        params['key'] = self.apikey
 
         self.log('POST to %s%s.json: %s' % (ROOT, url, params))
 
