@@ -1,10 +1,10 @@
+"""The Mandrill Python client with Deferreds."""
+
 import time
 import json
 
 from twisted.internet.defer import inlineCallbacks, returnValue
-
 from mandrill import Mandrill, ROOT
-
 import treq
 
 
@@ -19,19 +19,25 @@ class TXMandrill(Mandrill):
     """Override the base class to return Deferreds where appropriate."""
 
     def __init__(self, *args, **kwargs):
-        self.session = None
+        """
+        Init.
+
+        None-ify the session, so the Requests library doesn't get involved.
+        """
         super(TXMandrill, self).__init__(*args, **kwargs)
+        self.session = None
 
     @inlineCallbacks
     def call(self, url, params=None):
         """Override Mandrill's call method to return a deferred."""
-        params = json.dumps((params or {}).update({'key': self.apikey}))
+        params = (params or {}).update({'key': self.apikey})
 
         self.log('POST to %s%s.json: %s' % (ROOT, url, params))
 
         start = time.time()
         full_url = '{}{}.json'.format(ROOT, url)
-        response = yield treq.post(full_url, data=params, headers=HEADERS)
+        response = yield treq.post(
+            full_url, data=json.dumps(params), headers=HEADERS)
         result = yield response.json()
         complete_time = time.time() - start
 
