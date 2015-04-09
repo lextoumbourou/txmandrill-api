@@ -40,3 +40,7 @@ if __name__ == "__main__":
     df.addCallback(lambda _: reactor.stop())
     reactor.run()
 ```
+
+## License
+
+Apache (as per original project).
