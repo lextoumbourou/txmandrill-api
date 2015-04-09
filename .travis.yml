@@ -1,0 +1,14 @@
+language: python
+
+python:
+  - "2.7"
+
+install:
+  - pip install --requirement dev-requirements.txt
+  - pip install coveralls
+
+script:
+  - coverage run --source="." $(which trial) tests && coverage report
+
+after_success:
+  - coveralls
