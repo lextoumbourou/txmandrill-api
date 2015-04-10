@@ -50,8 +50,7 @@ class TXMandrill(Mandrill):
 
         self.last_request = dict(
             url=url, request_body=params, response_body=result,
-            response=response, time=complete_time
-        )
+            response=response, time=complete_time)
 
         if response.code >= 400:
             raise self.cast_error(result)
