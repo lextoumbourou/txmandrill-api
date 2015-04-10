@@ -33,13 +33,16 @@ class TXMandrill(Mandrill):
         params = params or {}
         params['key'] = self.apikey
 
-        self.log('POST to %s%s.json: %s' % (ROOT, url, params))
+        self.log('POST to {}{}.json: {}'.format(ROOT, url, params))
 
         start = time.time()
+
         full_url = '{}{}.json'.format(ROOT, url)
         response = yield treq.post(
             full_url, data=json.dumps(params), headers=HEADERS)
+
         result = yield response.json()
+
         complete_time = time.time() - start
 
         self.log('Received {} in {}ms: {}'.format(
