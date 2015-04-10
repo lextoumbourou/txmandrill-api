@@ -9,7 +9,7 @@ The Mandrill Python client but for Twisted.
 
 ## Installation
 
-```
+```bash
 > pip install txmandrill
 ```
 
@@ -19,7 +19,7 @@ Exactly the same as the [mandrill-api-python](https://bitbucket.org/mailchimp/ma
 
 ## Example
 
-```
+```python
 import pprint
 
 from twisted.internet import reactor
