@@ -5,7 +5,11 @@
 [![Downloads](https://pypip.in/download/txmandrill/badge.svg)](https://pypi.python.org/pypi/txmandrill/)
 [![Latest Version](https://pypip.in/version/txmandrill/badge.svg)](https://pypi.python.org/pypi/txmandrill/)
 
-The Mandrill Python client but for Twisted.
+*The Mandrill Python client but for [Twisted](https://twistedmatrix.com/trac/).*
+
+<img src="https://farm6.staticflickr.com/5260/5495737139_e2bddaf1d5_m_d.jpg" style="box-shadow: 1px 1px 5px 0px; border-radius: 100px;">
+<br>
+*[Mandrill - Oregon Zoo (Kathy & Sam)](https://www.flickr.com/photos/39871249@N07/5495737139/in/photostream/)*
 
 ## Installation
 
@@ -15,12 +19,12 @@ The Mandrill Python client but for Twisted.
 
 ## Usage
 
-Exactly the same as the [mandrill-api-python](https://bitbucket.org/mailchimp/mandrill-api-python) library, 'cept every method returns a [deferred](http://twistedmatrix.com/documents/current/core/howto/defer-intro.html). Simple as.
+Exactly the same as the [mandrill-api-python](https://mandrillapp.com/api/docs/index.python.html) library, 'cept every method returns a [Deferred](http://twistedmatrix.com/documents/current/core/howto/defer-intro.html). Simple as.
 
 ## Example
 
 ```python
-import pprint
+from pprint import pprint
 
 from twisted.internet import reactor
 from twisted.internet.defer import inlineCallbacks
@@ -29,20 +33,20 @@ from txmandrill import TXMandrill
 
 
 @inlineCallbacks
-def example():
-    m = TXMandrill('YOUR_API_KEY')
+def ping_and_get_users():
+    mandrill_client = TXMandrill('YOUR_API_KEY')
 
     # Ping
-    result = yield m.users.ping()
+    result = yield mandrill_client.users.ping()
     pprint(result)
 
     # Return the information about the API-connected user
-    result = yield m.users.info()
+    result = yield mandrill_client.users.info()
     pprint(result)
 
 
 if __name__ == "__main__":
-    df = example()
+    df = ping_and_get_users()
     df.addErrback(lambda err: err.printTraceback())
     df.addCallback(lambda _: reactor.stop())
     reactor.run()
