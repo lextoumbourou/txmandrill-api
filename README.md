@@ -7,7 +7,7 @@
 
 *The Mandrill Python client but for [Twisted](https://twistedmatrix.com/trac/).*
 
-<img src="https://farm6.staticflickr.com/5260/5495737139_e2bddaf1d5_m_d.jpg" style="box-shadow: 1px 1px 5px 0px; border-radius: 100px;">
+<img src="https://farm6.staticflickr.com/5260/5495737139_e2bddaf1d5_m_d.jpg">
 <br>
 *[Mandrill - Oregon Zoo (Kathy & Sam)](https://www.flickr.com/photos/39871249@N07/5495737139/in/photostream/)*
 
