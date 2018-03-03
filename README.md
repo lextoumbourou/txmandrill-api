@@ -2,8 +2,7 @@
 
 [![Build Status](https://travis-ci.org/lextoumbourou/txmandrill-api.svg?branch=master)](https://travis-ci.org/lextoumbourou/txmandrill-api)
 [![Coverage Status](https://coveralls.io/repos/lextoumbourou/txmandrill-api/badge.svg)](https://coveralls.io/r/lextoumbourou/txmandrill-api)
-[![Downloads](https://pypip.in/download/txmandrill/badge.svg)](https://pypi.python.org/pypi/txmandrill/)
-[![Latest Version](https://pypip.in/version/txmandrill/badge.svg)](https://pypi.python.org/pypi/txmandrill/)
+[![Latest Version](https://img.shields.io/pypi/v/txmandrill.svg)](https://pypi.python.org/pypi/txmandrill/)
 
 *The Mandrill Python client but for [Twisted](https://twistedmatrix.com/trac/).*
 
