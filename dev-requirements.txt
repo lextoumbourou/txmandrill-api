@@ -3,4 +3,4 @@ flake8==2.4.0
 mandrill==1.0.57
 mock==1.0.1
 treq==15.0.0
-Twisted==15.0.0
+Twisted==20.3.0
